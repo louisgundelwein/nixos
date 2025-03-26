@@ -1,8 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  unstable = import <nixos-unstable> {config = config.nixpkgs.config; };
-in
 {
   environment.systemPackages = with pkgs; [
     wget 
@@ -18,7 +15,7 @@ in
     code-cursor
     vscode 
     freecad 
-    unstable.orca-slicer 
+    orca-slicer 
     spacenavd 
     webkitgtk_4_1 
     gtk3 
