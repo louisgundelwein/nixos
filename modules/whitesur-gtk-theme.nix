@@ -23,6 +23,7 @@ in {
   environment.systemPackages = with pkgs; [
     whitesur-gtk-theme
     whitesur-icon-theme
+    gnome-themes-extra
   ];
 
   # Enable dconf (system-wide GSettings database)
