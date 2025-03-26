@@ -8,8 +8,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "vinceliuice";
       repo = "WhiteSur-gtk-theme";
-      rev = "2023-10-10";
-      hash = "sha256-qJq0Zt2v2fVyF0vRHfYqBWxQGYXRNPtMxGbEJxjYBBs=";
+      rev = "c20f9cf7e7c09c0d2e54f7659e4cd57c88ba5ef7";
+      hash = "sha256-c20f9cf7e7c09c0d2e54f7659e4cd57c88ba5ef7";
     };
 
     nativeBuildInputs = [ pkgs.gnome-themes-extra ];
