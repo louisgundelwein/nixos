@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 let
   whitesur-gtk-theme = pkgs.stdenv.mkDerivation {
@@ -20,11 +20,17 @@ let
     '';
   };
 in {
-  environment.systemPackages = [ whitesur-gtk-theme ];
+  environment.systemPackages = with pkgs; [
+    whitesur-gtk-theme
+    whitesur-icon-theme
+  ];
 
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      gtk-theme = "WhiteSur-Dark"; # Or Light
-    };
+  # Enable dconf (system-wide GSettings database)
+  programs.dconf.enable = true;
+
+  # Set GTK theme system-wide
+  environment.sessionVariables = {
+    GTK_THEME = "WhiteSur-Light";
   };
+
 }
