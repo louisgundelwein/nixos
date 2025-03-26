@@ -26,6 +26,7 @@
     libreoffice-qt6-fresh 
     xclip
     lazygit
+    tree
   ];
 
   programs.neovim = {
