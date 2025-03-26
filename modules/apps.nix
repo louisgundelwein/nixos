@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  unstable = import <nixos-unstable> {config = config.nixpkgs,config}
+  unstable = import <nixos-unstable> {config = config.nixpkgs.config}
 {
   environment.systemPackages = with pkgs; [
     wget 
