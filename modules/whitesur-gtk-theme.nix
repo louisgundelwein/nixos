@@ -12,7 +12,7 @@ let
       sha256 = "sha256-PLACEHOLDER"; # fix this after first build
     };
 
-    nativeBuildInputs = [ pkgs.gnome.gnome-themes-extra ];
+    nativeBuildInputs = [ pkgs.gnome-themes-extra ];
 
     installPhase = ''
       mkdir -p $out/share/themes
