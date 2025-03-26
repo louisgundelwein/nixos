@@ -27,6 +27,8 @@
     xclip
     lazygit
     tree
+    protonmail-bridge
+    thunderbird
   ];
 
   programs.neovim = {
