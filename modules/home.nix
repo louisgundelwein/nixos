@@ -23,7 +23,7 @@
     gtk = {
     enable = true;
     theme = {
-      name = "Orchis";
+      name = "gtk.theme.name = "Orchis-Dark-Compact";
         package = pkgs.orchis-theme;
       };
     };
