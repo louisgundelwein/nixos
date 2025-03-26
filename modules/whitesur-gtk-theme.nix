@@ -9,7 +9,7 @@ let
       owner = "vinceliuice";
       repo = "WhiteSur-gtk-theme";
       rev = "c20f9cf7e7c09c0d2e54f7659e4cd57c88ba5ef7";
-      sha256 = "sha256-wQjtpL4OVUtkcywNf+f+8uzW9aH8tZh7svx9GOebAfI=";
+      sha256 = "sha256-SWF77YqrijjXlr3r/EccrEyVBxqCOn6tXIHuRA5ngEY=";
     };
 
     nativeBuildInputs = [ pkgs.gnome-themes-extra ];
