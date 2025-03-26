@@ -27,7 +27,7 @@
     xclip
     lazygit
     tree
-    protonmail-bridge
+    protonmail-bridge-gui
     thunderbird
   ];
 
