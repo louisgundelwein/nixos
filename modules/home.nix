@@ -32,10 +32,6 @@
         name = "WhiteSur";
         package = pkgs.whitesur-icon-theme;
       };
-      cursorTheme = {
-        name = "WhiteSur-cursors";
-        package = pkgs.whitesur-cursor-theme;
-      };
     };
 
     # GNOME settings
@@ -43,7 +39,6 @@
       "org/gnome/desktop/interface" = {
         gtk-theme = "WhiteSur-Light";
         icon-theme = "WhiteSur";
-        cursor-theme = "WhiteSur-cursors";
       };
     };
   };
