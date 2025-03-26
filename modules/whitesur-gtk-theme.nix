@@ -15,23 +15,11 @@ let
     nativeBuildInputs = [ pkgs.gnome-themes-extra ];
 
     installPhase = ''
+      cd WhiteSur-gtk-theme-*
       mkdir -p $out/share/themes
       ./install.sh -d $out/share/themes -l
     '';
   };
 in {
-  environment.systemPackages = with pkgs; [
-    whitesur-gtk-theme
-    whitesur-icon-theme
-    gnome-themes-extra
-  ];
-
-  # Enable dconf (system-wide GSettings database)
-  programs.dconf.enable = true;
-
-  # Set GTK theme system-wide
-  environment.sessionVariables = {
-    GTK_THEME = "WhiteSur-Light";
-  };
-
+  environment.systemPackages = [ whitesur-gtk-theme ];
 }
