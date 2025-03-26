@@ -18,9 +18,24 @@ let
       export HOME=$TMPDIR
       cd WhiteSur-gtk-theme-*
       mkdir -p $out/share/themes
+      chmod +x ./install.sh
       ./install.sh -d $out/share/themes -l
     '';
+
+    sourceRoot = ".";
   };
 in {
-  environment.systemPackages = [ whitesur-gtk-theme ];
+  environment.systemPackages = with pkgs; [
+    whitesur-gtk-theme
+    whitesur-icon-theme
+    gnome-themes-extra
+  ];
+
+  # Enable dconf (system-wide GSettings database)
+  programs.dconf.enable = true;
+
+  # Set GTK theme system-wide
+  environment.sessionVariables = {
+    GTK_THEME = "WhiteSur-Light";
+  };
 }
