@@ -6,6 +6,7 @@
     ../modules/apps.nix
     ../modules/system.nix
     ../modules/users.nix
+    ../modules/whitesur-gtk-theme.nix
   ];
 
   # Basic system configuration
