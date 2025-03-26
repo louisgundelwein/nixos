@@ -6,7 +6,6 @@
     ../modules/apps.nix
     ../modules/system.nix
     ../modules/users.nix
-    ../modules/whitesur-gtk-theme.nix
     ../modules/home.nix
   ];
 
