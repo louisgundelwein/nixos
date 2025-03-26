@@ -3,13 +3,13 @@
 let
   whitesur-gtk-theme = pkgs.stdenv.mkDerivation {
     pname = "whitesur-gtk-theme";
-    version = "2023-10-10"; # adjust to the commit/tag you want
+    version = "2023-10-10";
 
     src = pkgs.fetchFromGitHub {
       owner = "vinceliuice";
       repo = "WhiteSur-gtk-theme";
-      rev = "2023-10-10"; # commit or tag
-      sha256 = "sha256-PLACEHOLDER"; # fix this after first build
+      rev = "2023-10-10";
+      hash = "sha256-qJq0Zt2v2fVyF0vRHfYqBWxQGYXRNPtMxGbEJxjYBBs=";
     };
 
     nativeBuildInputs = [ pkgs.gnome-themes-extra ];
