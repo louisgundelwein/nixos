@@ -10,7 +10,6 @@
     pnpm 
     nodejs_18 
     discord 
-    discordo
     tldr 
     ghostty 
     code-cursor
