@@ -18,8 +18,6 @@
         userName = "toxxic";
         userEmail = "l.gundelwein@proton.me";
       };
-
-      # Add more program configurations here
     };
 
     gtk = {
@@ -30,12 +28,5 @@
       };
     };
 
-    # GNOME settings
-    dconf.settings = {
-      "org/gnome/desktop/interface" = {
-        gtk-theme = "WhiteSur-Light";
-        icon-theme = "WhiteSur";
-      };
-    };
   };
 } 
