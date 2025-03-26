@@ -15,6 +15,7 @@ let
     nativeBuildInputs = [ pkgs.gnome-themes-extra ];
 
     installPhase = ''
+      export HOME=$TMPDIR
       cd WhiteSur-gtk-theme-*
       mkdir -p $out/share/themes
       ./install.sh -d $out/share/themes -l
