@@ -42,4 +42,7 @@
       orcas="nix --extra-experimental-features \"nix-command flakes\" run github:thiagokokada/nix-alien -- $(which orca-slicer)";
     };
   };
+
+  # Ensure redistributable firmware is enabled for proper CPU microcode updates
+  hardware.enableRedistributableFirmware = true;
 }

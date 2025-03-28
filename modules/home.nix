@@ -12,21 +12,19 @@
     ];
 
     programs = {
-      # Example: Configure git
       git = {
         enable = true;
         userName = "toxxic";
         userEmail = "l.gundelwein@proton.me";
       };
-    };
 
-    gtk = {
-    enable = true;
-    theme = {
-      name = "Orchis-Dark-Compact";
-        package = pkgs.orchis-theme;
+      gtk = {
+        enable = true;
+        theme = {
+          name = "Orchis-Dark-Compact";
+          package = pkgs.orchis-theme;
+        };
       };
     };
-
   };
-} 
+}
