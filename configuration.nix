@@ -167,32 +167,7 @@
     shell = pkgs.zsh;
   };
 
-  # ------------------------------------------------------------------
-  # Home Manager Configuration
-  # ------------------------------------------------------------------
-  # Previously defined in modules/home.nix.
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
-  home-manager.users.toxxic = { pkgs, ... }: {
-    home.stateVersion = "24.11";
-    home.packages = with pkgs; [
-      # Add additional personal packages here.
-    ];
-    programs = {
-      git = {
-        enable = true;
-        userName = "toxxic";
-        userEmail = "l.gundelwein@proton.me";
-      };
-      gtk = {
-        enable = true;
-        theme = {
-          name = "Orchis-Dark-Compact";
-          package = pkgs.orchis-theme;
-        };
-      };
-    };
-  };
+  
 
   # ------------------------------------------------------------------
   # Notes
@@ -202,5 +177,4 @@
   # - nixpkgs.config.allowUnfree: Allows the use of proprietary software.
   # - environment.systemPackages: Packages available system-wide.
   # - users.users: Defines users; in this case, "toxxic".
-  # - home-manager.users: Home Manager configuration for the user.
 }
