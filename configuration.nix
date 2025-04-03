@@ -104,6 +104,7 @@
     tree
     protonmail-bridge-gui
     thunderbird
+    gnome-keyring
   ];
 
   # Program-specific settings:
@@ -122,6 +123,7 @@
     };
   };
 
+    services.gnome.gnome-keyring.enable = true;
   programs.steam.enable = true;
   virtualisation.docker.enable = true;
   hardware.spacenavd.enable = true;
