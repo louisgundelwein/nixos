@@ -21,6 +21,12 @@
   # Sets the hostname and allows installation of proprietary (unfree) software.
   networking.hostName = "nixos";
   nixpkgs.config.allowUnfree = true;
+  nix = {
+  package = pkgs.nix;  # optional; ensures system uses nix from nixpkgs
+  settings.experimental-features = [ "nix-command" "flakes" ];
+};
+
+
 
   # ------------------------------------------------------------------
   # Hardware Configuration (auto-generated, see nixos-generate-config)
@@ -48,6 +54,26 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
+  # Set NVIDIA GPU Settings
+  hardware.graphics.enable = true;
+  hardware.graphics.enable32Bit = true;
+
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.open = false;  # Use proprietary driver, not open-source
+  hardware.nvidia.nvidiaSettings = true;
+  
+  #Update System
+   # Enable auto-upgrades.
+  system.autoUpgrade = {
+    enable = true;
+    # Run daily
+    dates = "daily";
+    # Build the new config and make it the default, but don't switch yet.  This will be picked up on reboot.  This helps
+    # prevent issues with OpenSnitch configs not well matching the state of the system.
+    operation = "boot";
+  };
+
   # ------------------------------------------------------------------
   # System-wide Packages and Applications
   # ------------------------------------------------------------------
@@ -73,8 +99,6 @@
     fnm
     neofetch
     obsidian
-    gnomeExtensions.pop-shell
-    libreoffice-qt6-fresh
     xclip
     lazygit
     tree
