@@ -177,6 +177,13 @@ in
   };
   programs.steam.enable = true;
 
+  # Run fastfetch when an interactive terminal opens (only when stdout is a tty).
+  programs.bash.interactiveShellInit = ''
+    if [[ -t 1 ]]; then
+      fastfetch
+    fi
+  '';
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -190,6 +197,7 @@ in
     (btop.override { cudaSupport = true; })
     claude-code
     codexLatest
+    fastfetch
     # FreeCAD from the stable channel: unstable's build is currently broken
     # (VTK vs GDAL API mismatch). Same version (1.1.1) and pre-built in cache.
     pkgs-stable.freecad
