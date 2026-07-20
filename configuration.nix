@@ -185,7 +185,9 @@ in
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-    btop
+    # btop with NVIDIA GPU monitoring (NVML). Driver runpath is wired up
+    # automatically so it finds libnvidia-ml at runtime.
+    (btop.override { cudaSupport = true; })
     claude-code
     codexLatest
     # FreeCAD from the stable channel: unstable's build is currently broken
