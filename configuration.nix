@@ -184,6 +184,16 @@ in
     fi
   '';
 
+  # Ghostty terminal config. Ghostty only reads ~/.config/ghostty/config, so we
+  # manage the file declaratively in /etc and symlink it into the user's home.
+  environment.etc."ghostty/config".text = ''
+    background-opacity = 0.9
+    background-blur = true
+  '';
+  systemd.user.tmpfiles.rules = [
+    "L+ %h/.config/ghostty/config - - - - /etc/ghostty/config"
+  ];
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
