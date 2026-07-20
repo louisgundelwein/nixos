@@ -89,9 +89,10 @@ in
   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
+  # "mac" variant matches Apple keyboards (printed symbols line up; @ = right Option + L).
   services.xserver.xkb = {
     layout = "de";
-    variant = "";
+    variant = "mac";
   };
 
   # ----------------------------------------------------------------------
@@ -119,6 +120,7 @@ in
 
   # 3Dconnexion SpaceMouse (SpaceNavigator) support via the spacenavd daemon.
   # FreeCAD and other CAD apps talk to it through libspnav.
+  # spnavcfg is the GUI to invert/swap axes and tune sensitivity.
   hardware.spacenavd.enable = true;
 
   # Configure console keymap
@@ -188,6 +190,7 @@ in
     opencode
     orca-slicer
     pciutils
+    spnavcfg
     spotify
     vscode
   ];
