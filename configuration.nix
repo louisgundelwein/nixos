@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-stable, ... }:
 
 let
   codexLatest = pkgs.stdenvNoCC.mkDerivation {
@@ -117,6 +117,10 @@ in
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
+  # 3Dconnexion SpaceMouse (SpaceNavigator) support via the spacenavd daemon.
+  # FreeCAD and other CAD apps talk to it through libspnav.
+  hardware.spacenavd.enable = true;
+
   # Configure console keymap
   console.keyMap = "de";
 
@@ -173,12 +177,16 @@ in
     btop
     claude-code
     codexLatest
+    # FreeCAD from the stable channel: unstable's build is currently broken
+    # (VTK vs GDAL API mismatch). Same version (1.1.1) and pre-built in cache.
+    pkgs-stable.freecad
     gh
     git
     ghostty
     google-chrome
     obsidian
     opencode
+    orca-slicer
     pciutils
     spotify
     vscode
