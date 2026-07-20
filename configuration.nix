@@ -123,6 +123,15 @@ in
   # spnavcfg is the GUI to invert/swap axes and tune sensitivity.
   hardware.spacenavd.enable = true;
 
+  # SpaceMouse tuning (captured from spnavcfg). Note: with this managed
+  # declaratively, /etc/spnavrc becomes read-only — retune by editing here,
+  # or temporarily comment this out to use spnavcfg again and re-capture.
+  environment.etc."spnavrc".text = ''
+    invert-trans = y
+    invert-rot = y
+    swap-yz = true
+  '';
+
   # Configure console keymap
   console.keyMap = "de";
 
