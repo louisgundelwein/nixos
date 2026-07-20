@@ -93,6 +93,9 @@ in
   services.xserver.xkb = {
     layout = "de";
     variant = "mac";
+    # This keyboard (SEMITEK, Mac layout) has no AltGr key. Make the key right
+    # of the space bar (right Meta/Cmd) act as AltGr (level3) so @ = that key + L.
+    options = "lv3:rwin_switch";
   };
 
   # ----------------------------------------------------------------------
